@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Caveat:wght@500;700&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --bg: #eceff4;
+  --surface: #ffffff;
+  --ink: #1c2433;
+  --muted: #5d6b82;
+  --line: #d9dfe9;
+  --brand: #4f46e5;
+  --brand-soft: #e9e8fd;
+  --amber: #f59e0b;
+  --danger: #b42318;
+  --radius: 14px;
+  --font-ui: "Inter", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", "Inter", sans-serif;
+  --font-board: "Caveat", "Comic Sans MS", cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
