@@ -165,8 +165,8 @@ export default function App() {
     }
   };
 
-  const boardActions =
-    lesson?.segments.flatMap((segment) => segment.boardActions) ?? [];
+  // const boardActions =
+  //   lesson?.segments.flatMap((segment) => segment.boardActions) ?? [];
 
   return (
     <div className="app-shell">
@@ -194,8 +194,9 @@ export default function App() {
           )}
 
           <Whiteboard
-            actions={boardActions}
+            segments={lesson?.segments ?? []}
             currentTime={currentTime}
+            hasLesson={lesson !== null}
           />
 
           {lesson && (

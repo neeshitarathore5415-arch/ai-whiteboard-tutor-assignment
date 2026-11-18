@@ -610,3 +610,41 @@
 .markdown-content {
     scrollbar-width: thin;
 }
+
+
+.board-item {
+    animation: board-fade 0.45s ease-out both;
+}
+
+/* shapes and arrows "draw themselves" */
+.board-item.draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: board-draw 0.8s ease-out forwards;
+}
+
+@keyframes board-fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes board-draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .board-item,
+    .board-item.draw {
+        animation: none;
+        stroke-dasharray: none;
+        stroke-dashoffset: 0;
+    }
+}

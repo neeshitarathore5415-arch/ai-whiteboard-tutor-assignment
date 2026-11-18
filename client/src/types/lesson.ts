@@ -1,14 +1,40 @@
+export type BoardActionType =
+    | "title"
+    | "text"
+    | "circle"
+    | "rectangle"
+    | "arrow"
+    | "table"
+    | "highlight";
 
 export interface BoardAction {
     id: string;
-    type: "title" | "text" | "circle" | "rectangle" | "arrow";
+    type: BoardActionType;
     content?: string;
+
     x: number;
     y: number;
     width?: number;
     height?: number;
+
+    from?: string;
+    to?: string;
+    x2?: number;
+    y2?: number;
+
+    headers?: string[];
+    rows?: string[][];
+
+    target?: string;
+    highlightRows?: number[];
+
+    anchor?: "start" | "middle" | "end";
+
     startTime: number;
-    duration: number;
+    endTime?: number;
+    persist?: boolean;
+    duration?: number;
+
     color?: string;
 }
 
